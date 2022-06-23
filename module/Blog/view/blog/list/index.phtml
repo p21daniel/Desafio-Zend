@@ -1,0 +1,28 @@
+<div class="text-center">
+    <h1>Página Inicial</h1>
+    <a class="btn btn-primary" href="/blog/pdfAll">Gerar listagem em PDF</a>
+</div>
+<hr>
+<div class="text-center">
+    <table class="table table-bordered table-responsive">
+        <tr >
+            <th style="text-align:center !important">#</th>
+            <th style="text-align:center !important">Título</th>
+            <th style="text-align:center !important">Texto</th>
+            <th style="text-align:center !important">Detalhes</th>
+            <th style="text-align:center !important">Ação</th>
+        </tr>
+        <?php foreach ($this->posts as $post) : ?>
+            <tr>
+                <td><?= $post->getId()?></td>
+                <td><?= $post->getTitle()?></td>
+                <td><?= $post->getText()?></td>
+                <td width="80px"><a class="btn btn-info btn-table" href="/blog/<?= $post->getId()?>"><i class="fa-solid fa-eye"></i></a></td>
+                <td width="120px">
+                    <a style="margin: 5px" class="btn btn-danger btn-table" href="/blog/delete/<?= $post->getId()?>"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-warning btn-table" href="/blog/edit/<?= $post->getId()?>"><i class="fa-solid fa-pencil"></i></a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+</div>

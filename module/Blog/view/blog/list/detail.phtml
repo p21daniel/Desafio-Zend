@@ -1,0 +1,12 @@
+<div class="text-center">
+    <h1>Detalhes do Post <?php echo $this->escapeHtml($this->post->getId());?></h1>
+
+    <h3>Título</h3>
+    <p><?php echo $this->escapeHtml($this->post->getTitle());?></p>
+
+    <h3>Texto</h3>
+    <p><?php echo $this->escapeHtml($this->post->getText());?></p>
+
+    <hr>
+    <a class="btn btn-info" href="/blog"><i class="fa-solid fa-arrow-left"></i></a>
+</div>

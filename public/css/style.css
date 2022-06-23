@@ -1,0 +1,30 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: whitesmoke;
+}
+
+.navbar{
+    background-color: #428bca;
+}
+
+.navbar a{
+    color: whitesmoke;
+}
+
+.navbar span{
+    color: whitesmoke;
+}
+
+.navbar .icon-bar{
+    background-color: whitesmoke;
+}
+
+.navbar a:hover{
+    background-color: whitesmoke;
+    color: #000000;
+}
+
+.btn-table{
+    width: 40px;
+}

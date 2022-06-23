@@ -1,0 +1,14 @@
+<div class="text-center">
+    <h1>Confirmação de Exclusão do Post <?php echo $this->escapeHtml($this->post->getId()); ?></h1>
+    <p>
+        Tem certeza que seja excluir o post:
+        '<?php echo $this->escapeHtml($this->post->getTitle()); ?>' e
+        '<?php echo $this->escapeHtml($this->post->getText()); ?>'?
+    </p>
+    <form action="<?php echo $this->url('blog/delete', array(), true) ?>" method="post">
+        <input class="btn btn-danger" type="submit" name="delete_confirmation" value="Sim">
+        <input class="btn btn-success" type="submit" name="delete_confirmation" value="Não">
+    </form>
+    <hr>
+    <a class="btn btn-info" href="/blog"><i class="fa-solid fa-arrow-left"></i></a>
+</div>
