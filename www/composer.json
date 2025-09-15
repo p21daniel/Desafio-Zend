@@ -1,0 +1,17 @@
+{
+    "name": "p21daniel/desafio-zend",
+    "description": "Basic Zend2 Code Structure",
+    "require": {
+        "php": "5.6.40",
+        "zendframework/zendframework": "~2.4.11",
+        "zendframework/zend-developer-tools": "0.*",
+        "doctrine/doctrine-orm-module": "0.8.*",
+        "fpdf/fpdf": "1.84"
+    },
+    "autoload": {
+        "psr-0": {
+            "Application\\": "module/Application/src/",
+            "Blog\\": "module/Blog/src/"
+        }
+    }
+}
