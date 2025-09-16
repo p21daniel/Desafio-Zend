@@ -2,9 +2,8 @@
 
 namespace Blog\Controller;
 
-use Blog\Entity\Post;
+use Application\Repository\InterfaceRepo;
 use Blog\Pdf\Pdf;
-use Blog\Service\PostServiceInterface;
 use Zend\Http\Response;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -17,15 +16,15 @@ class ListController extends AbstractActionController
 {
     // FAZER REPOS, MODELS e AFINS
     /**
-     * @var PostServiceInterface
+     * @var InterfaceRepo
      */
     protected $postService;
 
     /**
      * ListController constructor.
-     * @param PostServiceInterface $postService
+     * @param InterfaceRepo $postService
      */
-    public function __construct(PostServiceInterface $postService)
+    public function __construct(InterfaceRepo $postService)
     {
         $this->postService = $postService;
     }

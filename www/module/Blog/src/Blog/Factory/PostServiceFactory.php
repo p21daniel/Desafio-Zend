@@ -2,7 +2,7 @@
 
 namespace Blog\Factory;
 
-use Blog\Service\PostService;
+use Blog\Repository\PostRepo;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -23,7 +23,7 @@ class PostServiceFactory implements FactoryInterface
         $objectManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
         $postRepository = $objectManager->getRepository('Blog\Entity\Post');
 
-        return new PostService
+        return new PostRepo
         (
             $postRepository,
             $objectManager

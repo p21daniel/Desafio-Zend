@@ -1,20 +1,9 @@
 <?php
 
+use Blog\Factory\PostModelFactory;
+use Blog\Model\PostModel;
+
 return [
-    'service_manager' => [
-        'factories' => [
-            Blog\Service\PostServiceInterface::class => Blog\Factory\PostServiceFactory::class,
-        ],
-    ],
-
-    'controllers' => [
-        'factories' => [
-            'Blog\Controller\List'   => Blog\Factory\ListControllerFactory::class,
-            'Blog\Controller\Write'  => Blog\Factory\WriteControllerFactory::class,
-            'Blog\Controller\Delete' => Blog\Factory\DeleteControllerFactory::class,
-        ],
-    ],
-
     'router' => [
         'routes' => [
             'blog' => [
@@ -82,7 +71,18 @@ return [
             ],
         ],
     ],
-
+    'service_manager' => [
+        'factories' => [
+            PostModel::class => PostModelFactory::class,
+        ],
+    ],
+    'controllers' => [
+        'factories' => [
+            'Blog\Controller\List'   => Blog\Factory\ListControllerFactory::class,
+            'Blog\Controller\Write'  => Blog\Factory\WriteControllerFactory::class,
+            'Blog\Controller\Delete' => Blog\Factory\DeleteControllerFactory::class,
+        ],
+    ],
     'view_manager' => [
         'template_path_stack' => [
             __DIR__ . '/../view',

@@ -2,8 +2,7 @@
 
 namespace Blog\Controller;
 
-use Blog\Entity\Post;
-use Blog\Service\PostServiceInterface;
+use Application\Repository\InterfaceRepo;
 use Zend\Form\FormInterface;
 use Zend\Http\Response;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -16,7 +15,7 @@ use Zend\View\Model\ViewModel;
 class WriteController extends AbstractActionController
 {
     /**
-     * @var PostServiceInterface
+     * @var InterfaceRepo
      */
     protected $postService;
 
@@ -27,11 +26,11 @@ class WriteController extends AbstractActionController
 
     /**
      * WriteController constructor.
-     * @param PostServiceInterface $postService
+     * @param InterfaceRepo $postService
      * @param FormInterface $postForm
      */
     public function __construct(
-        PostServiceInterface $postService,
+        InterfaceRepo $postService,
         FormInterface $postForm
     ) {
         $this->postService = $postService;

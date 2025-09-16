@@ -13,7 +13,19 @@ return [
                     'password' => 'root',
                     'dbname'   => 'blog',
                     'charset'  => 'utf8',
-                ]
+                ],
+            ],
+        ],
+        'driver' => [
+            'blog_entities' => [
+                'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
+                'cache' => 'array',
+                'paths' => ['/usr/share/nginx/html/module/Blog/src/Blog/Entity'],
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    'Blog\Entity' => 'blog_entities',
+                ],
             ],
         ],
     ],

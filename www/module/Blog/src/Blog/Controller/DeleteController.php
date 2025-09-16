@@ -2,7 +2,7 @@
 
 namespace Blog\Controller;
 
-use Blog\Service\PostServiceInterface;
+use Application\Repository\InterfaceRepo;
 use Zend\Http\Response;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -14,15 +14,15 @@ use Zend\View\Model\ViewModel;
 class DeleteController extends AbstractActionController
 {
     /**
-     * @var PostServiceInterface
+     * @var InterfaceRepo
      */
     protected $postService;
 
     /**
      * DeleteController constructor.
-     * @param PostServiceInterface $postService
+     * @param InterfaceRepo $postService
      */
-    public function __construct(PostServiceInterface $postService)
+    public function __construct(InterfaceRepo $postService)
     {
         $this->postService = $postService;
     }
